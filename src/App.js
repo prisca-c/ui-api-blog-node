@@ -1,9 +1,10 @@
 import './App.css';
+import FormArticle from "./components/form_article";
 
 function App() {
   return (
     <div className="App">
-      <h1>React App</h1>
+      <FormArticle />
     </div>
   );
 }
