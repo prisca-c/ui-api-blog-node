@@ -20,8 +20,8 @@ const Articles = (props) => {
       {
         articlesState.map((article) => {
           return (
-            <div key={article}>
-              <p onClick={props.handleClick} className={"article"}>{article}</p>
+            <div key={article} className={"article"}>
+              <p onClick={props.handleClick}>{article}</p>
             </div>
           )
         })

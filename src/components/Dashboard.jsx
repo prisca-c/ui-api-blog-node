@@ -8,12 +8,14 @@ const Dashboard = (props) => {
   const [category, setCategory] = useState("code")
   const [article, setArticle] = useState("")
 
+  // Category state change when clicking on a category
   const handleCategoryClick = (e) => {
     setCategory(e.target.innerText)
     setArticle("")
     console.log(category)
   }
 
+  // Article state change when clicking on an article
   const handleArticleClick = (e) => {
     setArticle(e.target.innerText)
     console.log(e.target.innerText)
@@ -24,14 +26,16 @@ const Dashboard = (props) => {
       <h2 className={"text-center"}>Dashboard</h2>
       <div className={"dashboard-container"}>
         <div className={"left-container"}>
-          <Category handleClick={handleCategoryClick}/>
-          <Articles category={category} handleClick={handleArticleClick}/>
+          <div className={"left-container-cat"}>
+            <Category handleClick={handleCategoryClick}/>
+            <Articles category={category} handleClick={handleArticleClick}/>
+          </div>
+          <button onClick={props.handleShowForm} className={"btn-add-article"}>Add new article</button>
         </div>
         <div className={"right-container"}>
           <DisplayArticle category={category} article={article}/>
         </div>
       </div>
-      <button onClick={props.handleShowForm}>Add new article</button>
     </div>
   );
 }
