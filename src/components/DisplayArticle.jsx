@@ -28,13 +28,17 @@ const DisplayArticle = (props) => {
         articleState
           ?
           <div>
-            <h3>Article's Content: <span className={"article-title"}>{articleState.title}</span></h3>
+            <h3 className={"h3-article"}>Article's Content: <span className={"article-title"}>{articleState.title}</span></h3>
             <p className={"article-container"}>
+              <span className={"article-label"}>ID:</span>
+              <span className={"article-content"}>{
+                articleState.id
+                  ? articleState.id
+                  : "No ID"
+              }</span>
+
               <span className={"article-label"}>Title:</span>
               <span className={"article-content"}>{articleState.title}</span>
-
-              <span className={"article-label"}>ID:</span>
-              <span className={"article-content"}>{articleState.id}</span>
 
               <span className={"article-label"}>Excerpt:</span>
               <span className={"article-content"}>{articleState.excerpt}</span>
