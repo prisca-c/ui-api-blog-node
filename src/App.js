@@ -1,10 +1,21 @@
+import React, {useState} from 'react';
 import './App.css';
-import FormArticle from "./components/form_article";
+import FormArticle from "./components/FormArticle";
+import Dashboard from "./components/Dashboard";
 
-function App() {
+
+const App = () => {
+  const [showAddArticle, setShowAddArticle] = useState(false)
+
   return (
     <div className="App">
-      <FormArticle />
+      <Dashboard handleShowForm={()=>{setShowAddArticle(true)}}/>
+      {showAddArticle
+        ? <FormArticle
+            handleShowFormFalse={()=>{setShowAddArticle(false)}}
+          />
+        : null
+      }
     </div>
   );
 }
