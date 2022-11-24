@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Category from "./Category";
 import Articles from "./Articles";
+import DisplayArticle from "./DisplayArticle";
 
 
 const Dashboard = (props) => {
@@ -9,6 +10,7 @@ const Dashboard = (props) => {
 
   const handleCategoryClick = (e) => {
     setCategory(e.target.innerText)
+    setArticle("")
     console.log(category)
   }
 
@@ -19,10 +21,15 @@ const Dashboard = (props) => {
 
   return (
     <div className={"dashboard"}>
-      <h2>Dashboard</h2>
-      <div>
-        <Category handleClick={handleCategoryClick}/>
-        <Articles category={category} handleClick={handleArticleClick}/>
+      <h2 className={"text-center"}>Dashboard</h2>
+      <div className={"dashboard-container"}>
+        <div className={"left-container"}>
+          <Category handleClick={handleCategoryClick}/>
+          <Articles category={category} handleClick={handleArticleClick}/>
+        </div>
+        <div className={"right-container"}>
+          <DisplayArticle category={category} article={article}/>
+        </div>
       </div>
       <button onClick={props.handleShowForm}>Add new article</button>
     </div>

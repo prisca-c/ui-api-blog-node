@@ -55,3 +55,41 @@ label {
 .category:hover , .article:hover {
   background: #ccc;
 }
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.left-container {
+  width: 30vw;
+  overflow: hidden;
+}
+
+.right-container {
+  width: 70vw;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.article-title {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.article-label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.article-content {
+  margin-bottom: 0.8rem;
+}
