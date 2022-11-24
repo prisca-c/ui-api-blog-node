@@ -50,7 +50,7 @@ const DisplayArticle = (props) => {
           </div>
           :
           <div>
-            <p>Click on an article to display it</p>
+            <h3 className={"h3-article"}>Click on an article to display it</h3>
           </div>
       }
     </div>
