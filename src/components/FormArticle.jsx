@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {getCategories} from "../api/api_blog";
 
 const FormArticle = (props) => {
+  const [categoriesState, setCategoriesState] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +27,19 @@ const FormArticle = (props) => {
     props.handleShowFormFalse();
   }
 
+  useEffect(() => {
+    const fetchCategory = async () => {
+      try{
+        getCategories().then((response) => {
+          setCategoriesState(response)
+        })
+      }
+      catch (e) {
+        console.log(e)
+      }
+    }
+    fetchCategory()
+  },[categoriesState])
 
   return (
     <div>
@@ -46,9 +61,13 @@ const FormArticle = (props) => {
           <div className={"input-group"}>
             <label htmlFor={"category"}>Category</label>
             <select name={"category"} id={"category"}>
-              <option value="code">Code</option>
-              <option value="design">Design</option>
-              <option value="devop">Devop</option>
+              {
+                categoriesState.map((category) => {
+                  return (
+                    <option key={category} value={category}>{category}</option>
+                  )
+                })
+              }
             </select>
           </div>
           <div className={"input-group"}>
