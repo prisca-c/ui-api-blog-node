@@ -1,8 +1,17 @@
-h1 {
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+button, .category {
+  cursor: pointer;
+}
+
+.text-center {
   text-align: center;
 }
 
-.form_add_article {
+#form_add_article {
   width: 80vw;
   margin: auto;
 }
@@ -18,9 +27,12 @@ h1 {
 
 .input-group input , .input-group textarea{
   height: 20px;
-  width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
+}
+
+.input-group textarea {
+    height: 150px;
 }
 
 .input-group select {
@@ -32,4 +44,14 @@ h1 {
 
 label {
   width: auto;
+  font-weight: bold;
+}
+
+.category, .article{
+  background: white;
+  transition: all ease-in-out 0.3s;
+}
+
+.category:hover , .article:hover {
+  background: #ccc;
 }
