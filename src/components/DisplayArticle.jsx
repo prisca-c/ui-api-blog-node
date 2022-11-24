@@ -20,8 +20,6 @@ const DisplayArticle = (props) => {
     }
   },[articleState, articleChoosen, props.article])
 
-  //console.log(articleState)
-
   return (
     <div className={"display-article"}>
       {
