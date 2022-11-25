@@ -1,6 +1,6 @@
 # How to use it
 
-To use it, you have to run the api-blog-node server (checkout branch SQLITE !) .
+To use it, you have to run the api-blog-node server (checkout branch SQLITE !) https://github.com/prisca-c/api-blog-node.
 
 # Getting Started with Create React App
 
