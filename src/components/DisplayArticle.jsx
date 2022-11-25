@@ -43,6 +43,9 @@ const DisplayArticle = (props) => {
 
               <span className={"article-label"}>Category:</span>
               <span className={"article-content"}>{articleState.category}</span>
+
+              <button>Edit Article</button>
+              <button>Delete</button>
             </p>
           </div>
           :
