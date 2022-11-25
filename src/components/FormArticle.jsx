@@ -47,10 +47,6 @@ const FormArticle = (props) => {
       <form id={"form_add_article"} onSubmit={handleSubmit}>
         <div>
           <div className={"input-group"}>
-            <label htmlFor={"id"}>Id</label>
-            <input type={"text"} name={"id"} id={"id"} />
-          </div>
-          <div className={"input-group"}>
             <label htmlFor={"title"}>Title</label>
             <input type={"text"} name={"title"} id={"title"} required={true}/>
           </div>
@@ -71,8 +67,8 @@ const FormArticle = (props) => {
             </select>
           </div>
           <div className={"input-group"}>
-            <label htmlFor={"body"}>Body</label>
-            <textarea name={"body"} id={"body"} required={true}/>
+            <label htmlFor={"content"}>Content</label>
+            <textarea name={"content"} id={"content"} required={true}/>
           </div>
 
           <button type={"submit"}>Submit</button>

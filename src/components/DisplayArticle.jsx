@@ -28,12 +28,9 @@ const DisplayArticle = (props) => {
           <div>
             <h3 className={"h3-article"}>Article's Content: <span className={"article-title"}>{articleState.title}</span></h3>
             <p className={"article-container"}>
-              <span className={"article-label"}>ID:</span>
-              <span className={"article-content"}>{
-                articleState.id
-                  ? articleState.id
-                  : "No ID"
-              }</span>
+
+              <span className={"article-label"}>Id:</span>
+              <span className={"article-content"}>{articleState.id}</span>
 
               <span className={"article-label"}>Title:</span>
               <span className={"article-content"}>{articleState.title}</span>
@@ -41,8 +38,8 @@ const DisplayArticle = (props) => {
               <span className={"article-label"}>Excerpt:</span>
               <span className={"article-content"}>{articleState.excerpt}</span>
 
-              <span className={"article-label"}>Body:</span>
-              <span className={"article-content"}>{articleState.body}</span>
+              <span className={"article-label"}>Content:</span>
+              <span className={"article-content"}>{articleState.content}</span>
 
               <span className={"article-label"}>Category:</span>
               <span className={"article-content"}>{articleState.category}</span>
