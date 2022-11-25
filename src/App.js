@@ -1,18 +1,27 @@
 import React, {useState} from 'react';
 import './App.css';
 import FormArticle from "./components/FormArticle";
+import FormCategory from "./components/FormCategory";
 import Dashboard from "./components/Dashboard";
 
 
 const App = () => {
   const [showAddArticle, setShowAddArticle] = useState(false)
+  const [showAddCategory, setShowAddCategory] = useState(false)
 
   return (
     <div className="App">
-      <Dashboard handleShowForm={()=>{setShowAddArticle(true)}}/>
+      <Dashboard handleShowFormArticle={()=>{setShowAddArticle(true)}}
+                 handleShowFormCategory={()=>{setShowAddCategory(true)}}/>
       {showAddArticle
         ? <FormArticle
             handleShowFormFalse={()=>{setShowAddArticle(false)}}
+          />
+        : null
+      }
+      {showAddCategory
+        ? <FormCategory
+            handleShowFormFalse={()=>{setShowAddCategory(false)}}
           />
         : null
       }

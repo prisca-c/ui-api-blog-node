@@ -30,6 +30,7 @@ const Category = (props) => {
           )
         })
       }
+      <button onClick={props.handleShowFormCategory}>Add Category</button>
     </div>
   );
 }
