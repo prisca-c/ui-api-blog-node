@@ -4,8 +4,6 @@ import {getArticles} from "../api/api_blog";
 const Articles = (props) => {
   const [articlesState, setArticlesState] = useState([])
 
-
-
   useEffect(() => {
       getArticles(props.category)
         .then((response) => {
@@ -17,7 +15,6 @@ const Articles = (props) => {
   },[props.category])
 
   let articlesList = []
-
   if(articlesState !== undefined){
     articlesList = articlesState.map((article) => {
       return (
@@ -27,7 +24,6 @@ const Articles = (props) => {
       )
     })
   }
-
 
   return (
     <div className={"articles"}>

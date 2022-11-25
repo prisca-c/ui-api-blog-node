@@ -37,12 +37,18 @@ const Dashboard = (props) => {
               handleShowFormCategory={props.handleShowFormCategory}
               handleCategoryUpdate={props.handleCategoryUpdate}
             />
-            <Articles category={category} handleClick={handleArticleClick}/>
+            <Articles
+              category={category}
+              handleClick={handleArticleClick}
+            />
           </div>
           <button onClick={props.handleShowFormArticle} className={"btn-add-article"}>Add new article</button>
         </div>
         <div className={"right-container"}>
-          <DisplayArticle category={category} article={article}/>
+          <DisplayArticle
+            category={category}
+            article={article}
+          />
         </div>
       </div>
     </div>

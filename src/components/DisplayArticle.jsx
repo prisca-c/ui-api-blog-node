@@ -4,6 +4,15 @@ import {getArticle} from "../api/api_blog";
 const DisplayArticle = (props) => {
   const [articleState, setArticleState] = useState()
 
+  const handleDelete = (e) => {
+    e.preventDefault()
+    const url = `http://localhost:8080/category/${articleState.category}/${articleState.id}`
+    fetch(url, {
+      method: 'DELETE'
+    })
+    setArticleState("")
+  }
+
   useEffect(() => {
       if(props.article !== ""){
         getArticle(props.category, props.article)
@@ -43,7 +52,7 @@ const DisplayArticle = (props) => {
               <span className={"article-content"}>{articleState.category}</span>
 
               <button>Edit Article</button>
-              <button>Delete</button>
+              <button onClick={handleDelete}>Delete</button>
             </p>
           </div>
           :
