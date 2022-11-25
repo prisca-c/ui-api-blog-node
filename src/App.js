@@ -8,11 +8,15 @@ import Dashboard from "./components/Dashboard";
 const App = () => {
   const [showAddArticle, setShowAddArticle] = useState(false)
   const [showAddCategory, setShowAddCategory] = useState(false)
+  const [categoryUpdate, setCategoryUpdate] = useState(0)
 
   return (
     <div className="App">
-      <Dashboard handleShowFormArticle={()=>{setShowAddArticle(true)}}
-                 handleShowFormCategory={()=>{setShowAddCategory(true)}}/>
+      <Dashboard
+        handleShowFormArticle={()=>{setShowAddArticle(true)}}
+        handleShowFormCategory={()=>{setShowAddCategory(true)}}
+        handleCategoryUpdate={()=>{setCategoryUpdate(categoryUpdate + 1)}}
+      />
       {showAddArticle
         ? <FormArticle
             handleShowFormFalse={()=>{setShowAddArticle(false)}}

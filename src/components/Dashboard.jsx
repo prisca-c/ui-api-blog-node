@@ -32,7 +32,11 @@ const Dashboard = (props) => {
       <div className={"dashboard-container"}>
         <div className={"left-container"}>
           <div className={"left-container-cat"}>
-            <Category handleClick={handleCategoryClick} handleShowFormCategory={props.handleShowFormCategory}/>
+            <Category
+              handleClick={handleCategoryClick}
+              handleShowFormCategory={props.handleShowFormCategory}
+              handleCategoryUpdate={props.handleCategoryUpdate}
+            />
             <Articles category={category} handleClick={handleArticleClick}/>
           </div>
           <button onClick={props.handleShowFormArticle} className={"btn-add-article"}>Add new article</button>

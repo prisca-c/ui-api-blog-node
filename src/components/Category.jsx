@@ -8,13 +8,10 @@ const Category = (props) => {
     getCategories().then((response) => {
       setCategoriesState(response)
     })
-  },[])
+  },[props.handleCategoryUpdate])
 
   const handleClick = (e) => {
     props.handleShowFormCategory(e)
-    getCategories().then((response) => {
-      setCategoriesState(response)
-    })
   }
 
   let categoriesList = []
