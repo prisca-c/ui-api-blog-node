@@ -17,8 +17,10 @@ const Dashboard = (props) => {
 
   // Article state change when clicking on an article
   const handleArticleClick = (e) => {
-    setArticle(e.target.innerText)
-    console.log(e.target.innerText)
+    let id = e.target.innerText
+    let reg = id.match(/\[(.*?)\]/) // Return characters inside "[]"
+    let articleId = reg[0].replace(/\D/g,'') // Only return number inside "[]"
+    setArticle(articleId)
   }
 
   return (
