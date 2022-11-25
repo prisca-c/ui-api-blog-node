@@ -1,3 +1,7 @@
+# How to use it
+
+To use it, you have to run the api-blog-node server (checkout branch SQLITE !) .
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
