@@ -39,7 +39,7 @@ const FormArticle = (props) => {
       }
     }
     fetchCategory()
-  },[categoriesState])
+  },[])
 
   return (
     <div>

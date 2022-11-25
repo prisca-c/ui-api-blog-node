@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Category from "./Category";
 import Articles from "./Articles";
 import DisplayArticle from "./DisplayArticle";
 
 
 const Dashboard = (props) => {
-  const [category, setCategory] = useState("code")
+  const [category, setCategory] = useState("devop")
   const [article, setArticle] = useState("")
 
   // Category state change when clicking on a category
@@ -22,6 +22,9 @@ const Dashboard = (props) => {
     let articleId = reg[0].replace(/\D/g,'') // Only return number inside "[]"
     setArticle(articleId)
   }
+
+  useEffect(() => {
+  },[category, article])
 
   return (
     <div className={"dashboard"}>

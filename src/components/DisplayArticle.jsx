@@ -2,23 +2,21 @@ import React, {useState, useEffect} from "react";
 import {getArticle} from "../api/api_blog";
 
 const DisplayArticle = (props) => {
-  const [articleChoosen, setArticleChoosen] = useState("")
   const [articleState, setArticleState] = useState()
 
-  const fetchArticle = async () => {
-    if(props.article !== ""){
-      getArticle(props.category, props.article).then((response) => {
-        setArticleState(response)
-      })
-    }
-  }
-
   useEffect(() => {
-    fetchArticle()
-    if(props.article !== ""){
-      setArticleChoosen(props.article)
-    }
-  },[articleState, articleChoosen, props.article])
+      if(props.article !== ""){
+        getArticle(props.category, props.article)
+          .then((response) => {
+            setArticleState(response)
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      } else {
+        setArticleState("")
+      }
+  },[props.article])
 
   return (
     <div className={"display-article"}>
